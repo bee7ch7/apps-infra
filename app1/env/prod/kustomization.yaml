@@ -1,0 +1,13 @@
+namespace: prod
+namePrefix: prod-
+resources:
+  - namespace.yaml
+  - ../../base
+images:
+  - name: nginx
+    newTag: 1.21.6
+
+patches:
+  - path: deployment.yaml
+    target:
+      kind: Deployment
